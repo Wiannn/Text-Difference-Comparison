@@ -26,7 +26,7 @@
 
 ## 示例
 
-![文本差异对比工具截图](https://raw.githubusercontent.com/Wiannn/Text-Difference-Comparison/master/screenshot.png)
+效果可查看根目录下的 screenshot.png 文件。
 
 ## 本地开发
 
