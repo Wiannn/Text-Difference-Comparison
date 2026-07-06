@@ -1,57 +1,49 @@
-# React + TypeScript + Vite
+# 文本差异对比工具
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个简单好用的在线文本对比工具，帮你快速找出两段文字之间的差异。
 
-Currently, two official plugins are available:
+## 功能特点
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **左右双栏输入**：左边放原文，右边放修改后的版本
+- **智能差异检测**：自动标出删除和新增的内容
+- **文本格式化**：一键清理乱码、多余空行和 Markdown 格式
+- **实时预览**：输入时自动对比，无需手动触发
+- **简洁美观**：柔和的马卡龙色系标注，清晰易读
 
-## Expanding the ESLint configuration
+## 如何使用
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **访问网站**：打开 https://wiannn.github.io/Text-Difference-Comparison/
+2. **输入文本**：左边粘贴原文，右边粘贴修改后的版本
+3. **查看差异**：系统自动标出删除和新增的内容
+4. **格式化文本**（可选）：如果粘贴的文本有乱码或多余格式，点击「格式化文本」按钮清理
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 示例
+
+## 本地开发
+
+如果你想在本地运行或修改代码：
+
+```bash
+# 克隆仓库
+git clone https://github.com/Wiannn/Text-Difference-Comparison.git
+
+# 进入目录
+cd Text-Difference-Comparison
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+然后打开 http://localhost:5173/ 即可使用。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 颜色说明
 
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+本工具采用柔和的马卡龙色系进行差异标注，视觉舒适且易于区分：
+
+| 类型 | 背景色 | 字体色 | 含义 |
+|------|--------|--------|------|
+| 删除内容 | #FDF2F1（浅粉色） | #A8403A（深玫红） | 原文中有但修改后删除的内容 |
+| 新增内容 | #F1F6F2（浅绿色） | #3A6B42（深绿） | 修改后新增的内容 |
